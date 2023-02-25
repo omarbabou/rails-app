@@ -41,6 +41,11 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### 🚀 Live and Video Demo <a name="live and video-demo"></a>
+
+- [live demo link](visionary-narwhal-5adafc.netlify.app)<br>
+- [ video demo link](https://www.loom.com/share/0175cb699ec040a8bf745978105a47c5)
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
