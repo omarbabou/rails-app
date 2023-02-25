@@ -1,1 +1,5 @@
-<p>kandyeprprer</p>
+<% if user_signed_in? %>
+  <%= render "home_page" %>
+<%else%>
+  <%= render "splash" %>
+<%end%>
