@@ -4,7 +4,4 @@ class Category < ApplicationRecord
 
   validates :user_id, presence: true
 
-  # def total_amount
-  #   transactions.sum(:amount)
-  # end
 end
