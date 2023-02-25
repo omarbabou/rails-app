@@ -517,3 +517,22 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 1917)
 
 
+Started GET "/" for ::1 at 2023-02-25 12:01:43 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 724)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 1648)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 1917)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 12:02:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 138.8ms | Allocations: 22280)
+  Rendered layout layouts/application.html.erb (Duration: 155.5ms | Allocations: 23731)
+Completed 200 OK in 191ms (Views: 166.9ms | ActiveRecord: 0.0ms | Allocations: 28032)
+
+
