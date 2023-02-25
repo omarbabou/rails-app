@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
       # render :show, status: :created, location: @group
       redirect_to groups_path, notice: "Added Succefully!"
     else
-      flash.now[:error] = 'Post not yet saved, try again'
+      flash.now[:error] = 'Groups not yet saved, try again'
       render :new, status: :unprocessable_entity
     end
   end
