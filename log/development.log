@@ -2067,3 +2067,607 @@ SyntaxError (/Users/omarbabou/Desktop/rails-app/config/routes.rb:13: syntax erro
 config/routes.rb:13: syntax error, unexpected local variable or method, expecting `end'
 config/routes.rb:13: syntax error, unexpected local variable or method, expecting `end'
 config/routes.rb:13: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:50:21 +0200
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (43.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 24]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 65.3ms | Allocations: 4894)
+  Rendered categories/index.html.erb within layouts/application (Duration: 83.1ms | Allocations: 8977)
+  Rendered layout layouts/application.html.erb (Duration: 94.2ms | Allocations: 10140)
+Completed 200 OK in 120ms (Views: 46.3ms | ActiveRecord: 50.7ms | Allocations: 15812)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2023-02-25 23:50:25 +0200
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 5.6ms | Allocations: 810)
+  Rendered categories/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 963)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 1917)
+Completed 200 OK in 22ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 3998)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-02-25 23:50:30 +0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Idriss ", "icon"=>"https://img.icons8.com/glyph-neue/128/user.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+  [1m[36mCategory Create (49.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Idriss "], ["icon", "https://img.icons8.com/glyph-neue/128/user.png"], ["created_at", "2023-02-25 21:50:30.349410"], ["updated_at", "2023-02-25 21:50:30.349410"], ["user_id", 5]]
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (45.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 127ms (ActiveRecord: 96.2ms | Allocations: 4613)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:50:30 +0200
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (0.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 24]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.8ms | Allocations: 771)
+  [1m[36mTransaction Sum (1.1ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 25]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 6.5ms | Allocations: 762)
+  Rendered categories/index.html.erb within layouts/application (Duration: 26.4ms | Allocations: 2468)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 3437)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 1.7ms | Allocations: 3760)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2023-02-25 23:50:50 +0200
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 1.7ms | Allocations: 681)
+  Rendered categories/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 822)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 1775)
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 3713)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-02-25 23:50:57 +0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Basktball", "icon"=>"https://icons8.com/icon/I_5_kSloSWJW/account"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+  [1m[36mCategory Create (5.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Basktball"], ["icon", "https://icons8.com/icon/I_5_kSloSWJW/account"], ["created_at", "2023-02-25 21:50:57.187951"], ["updated_at", "2023-02-25 21:50:57.187951"], ["user_id", 5]]
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (42.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 69ms (ActiveRecord: 48.9ms | Allocations: 4221)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:50:57 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (0.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 24]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.7ms | Allocations: 762)
+  [1m[36mTransaction Sum (0.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 25]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.4ms | Allocations: 763)
+  [1m[36mTransaction Sum (0.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 26]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.6ms | Allocations: 766)
+  Rendered categories/index.html.erb within layouts/application (Duration: 31.7ms | Allocations: 3310)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 4278)
+Completed 200 OK in 42ms (Views: 37.3ms | ActiveRecord: 1.4ms | Allocations: 4601)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-02-25 23:53:43 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 41ms (ActiveRecord: 0.2ms | Allocations: 2899)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:53:43 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 1793)
+Completed 200 OK in 27ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 2796)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-25 23:53:44 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 524)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 55.1ms | Allocations: 2831)
+  Rendered layout layouts/application.html.erb (Duration: 57.7ms | Allocations: 3952)
+Completed 200 OK in 71ms (Views: 62.8ms | ActiveRecord: 0.0ms | Allocations: 5820)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-02-25 23:54:23 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dkrmcr30@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dkrmcr30@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 433ms (ActiveRecord: 2.6ms | Allocations: 14216)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:54:24 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (2.1ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 4.2ms | Allocations: 779)
+  [1m[36mTransaction Sum (2.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 7.7ms | Allocations: 762)
+  [1m[36mTransaction Sum (1.9ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.9ms | Allocations: 768)
+  [1m[36mTransaction Sum (7.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 8.9ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 33.9ms | Allocations: 3803)
+  Rendered categories/index.html.erb within layouts/application (Duration: 71.3ms | Allocations: 8121)
+  Rendered layout layouts/application.html.erb (Duration: 74.4ms | Allocations: 8210)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 16.0ms | Allocations: 8542)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-02-25 23:54:29 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dkrmcr30@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms | Allocations: 1895)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:54:29 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (3.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (3.0ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.5ms | Allocations: 762)
+  [1m[36mTransaction Sum (2.7ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 4.3ms | Allocations: 763)
+  [1m[36mTransaction Sum (2.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.9ms | Allocations: 766)
+  [1m[36mTransaction Sum (2.5ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 6.2ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 3.2ms | Allocations: 3763)
+  Rendered categories/index.html.erb within layouts/application (Duration: 34.4ms | Allocations: 8015)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 8103)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 13.7ms | Allocations: 8403)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-25 23:54:32 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 2338)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:54:32 +0200
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (5.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (1.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.5ms | Allocations: 779)
+  [1m[36mTransaction Sum (3.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.0ms | Allocations: 763)
+  [1m[36mTransaction Sum (4.0ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 7.5ms | Allocations: 768)
+  [1m[36mTransaction Sum (2.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.2ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 3.9ms | Allocations: 3797)
+  Rendered categories/index.html.erb within layouts/application (Duration: 36.0ms | Allocations: 8117)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 8206)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 16.7ms | Allocations: 8557)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-25 23:54:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms | Allocations: 1882)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:54:35 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (5.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (2.1ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.8ms | Allocations: 762)
+  [1m[36mTransaction Sum (3.2ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.7ms | Allocations: 762)
+  [1m[36mTransaction Sum (0.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 2.3ms | Allocations: 766)
+  [1m[36mTransaction Sum (3.2ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 4.9ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 5.1ms | Allocations: 3763)
+  Rendered categories/index.html.erb within layouts/application (Duration: 30.3ms | Allocations: 8013)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 8101)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 14.2ms | Allocations: 8401)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-25 23:54:41 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1853)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:54:41 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (2.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 4.8ms | Allocations: 762)
+  [1m[36mTransaction Sum (0.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 2.2ms | Allocations: 762)
+  [1m[36mTransaction Sum (4.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 6.2ms | Allocations: 766)
+  [1m[36mTransaction Sum (0.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.1ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 3.3ms | Allocations: 3763)
+  Rendered categories/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 8013)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 8101)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 10.1ms | Allocations: 8401)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:54:52 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (4.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 6.8ms | Allocations: 762)
+  [1m[36mTransaction Sum (28.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 32.2ms | Allocations: 762)
+  [1m[36mTransaction Sum (30.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 35.5ms | Allocations: 766)
+  [1m[36mTransaction Sum (82.5ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 84.2ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 6.7ms | Allocations: 3763)
+  Rendered categories/index.html.erb within layouts/application (Duration: 171.3ms | Allocations: 8013)
+  Rendered layout layouts/application.html.erb (Duration: 173.3ms | Allocations: 8101)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 147.7ms | Allocations: 8401)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started POST "/categories" for 127.0.0.1 at 2023-02-25 23:55:02 +0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Basktball", "icon"=>"https://icons8.com/icon/I_5_kSloSWJW/account"}, "commit"=>"Create Category"}
+Can't verify CSRF token authenticity.
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-25 23:55:02 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1882)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:55:02 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (2.7ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.2ms | Allocations: 762)
+  [1m[36mTransaction Sum (0.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.0ms | Allocations: 762)
+  [1m[36mTransaction Sum (4.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 6.5ms | Allocations: 766)
+  [1m[36mTransaction Sum (2.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 4.7ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 6.2ms | Allocations: 3763)
+  Rendered categories/index.html.erb within layouts/application (Duration: 31.3ms | Allocations: 8013)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 8101)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 12.8ms | Allocations: 8401)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started GET "/categories" for 127.0.0.1 at 2023-02-25 23:55:07 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (5.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (1.3ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 17]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.0ms | Allocations: 760)
+  [1m[36mTransaction Sum (3.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 18]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 5.2ms | Allocations: 760)
+  [1m[36mTransaction Sum (6.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 19]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 9.5ms | Allocations: 764)
+  [1m[36mTransaction Sum (3.1ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 20]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 4.8ms | Allocations: 760)
+  Rendered categories/_category.html.erb (Duration: 4.4ms | Allocations: 3739)
+  Rendered categories/index.html.erb within layouts/application (Duration: 36.2ms | Allocations: 7979)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 8067)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 20.7ms | Allocations: 10015)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for false:FalseClass
+
+            model = record.to_model
+                          ^^^^^^^^^
+Did you mean?  to_yaml):
+    1: <div class="single-cat" id="<%= dom_id category %>">
+    2:  <div class="category-img">
+    3:     <%= image_tag example_img(category), class: "cat-img" %>
+    4:   </div>
+    5:   <p class = "cat-details">
+    6:     <strong><%= category.name %></strong>
+  
+app/views/categories/_category.html.erb:3
+app/views/categories/index.html.erb:15
+app/views/categories/index.html.erb:13
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-02-25 23:55:10 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 2185)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:55:10 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1618)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 1893)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-25 23:55:12 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1471)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2592)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 4165)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-02-25 23:56:05 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"omar", "email"=>"mom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mom@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (45.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "omar"], ["created_at", "2023-02-25 21:56:05.806112"], ["updated_at", "2023-02-25 21:56:05.806112"], ["email", "mom@gmail.com"], ["encrypted_password", "$2a$12$Jeqw3lCC3rJHrQeuBesU8uEuuc.CRiDLu2Y.KqXdADqtflTBykla2"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (90.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 457ms (ActiveRecord: 136.9ms | Allocations: 6718)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:56:05 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/categories/index.html.erb:13
+  Rendered categories/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 764)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 1733)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 3.1ms | Allocations: 2061)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2023-02-25 23:56:07 +0200
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 1.6ms | Allocations: 691)
+  Rendered categories/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 832)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1785)
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 3712)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-02-25 23:56:11 +0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Orange", "icon"=>"https://img.icons8.com/glyph-neue/128/user.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+  [1m[36mCategory Create (4.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Orange"], ["icon", "https://img.icons8.com/glyph-neue/128/user.png"], ["created_at", "2023-02-25 21:56:11.670615"], ["updated_at", "2023-02-25 21:56:11.670615"], ["user_id", 6]]
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (44.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 66ms (ActiveRecord: 51.7ms | Allocations: 4220)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-25 23:56:11 +0200
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/categories/index.html.erb:13
+  [1m[36mTransaction Sum (0.2ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 27]]
+  ↳ app/views/categories/_category.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 3.5ms | Allocations: 775)
+  Rendered categories/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1616)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 2584)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.4ms | Allocations: 2907)
+
+
