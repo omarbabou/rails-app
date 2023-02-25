@@ -1,143 +1,78 @@
-# 📗 Table of Contents
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+# Budget App
+![](mobile.png)
+![](lap.png)
 
-<!-- PROJECT DESCRIPTION -->
+### About the project
 
-# 📖 Game Time <a name="about-project"></a>
+> BulgaApp is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-> a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-## 🛠 Built With <a name="built-with"></a>
+## Built With
 
-### Tech Stack <a name="tech-stack"></a>
+![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white) &nbsp; &nbsp; <img src="https://1ohvy81v7br01wtgnj4bf0ek-wpengine.netdna-ssl.com/wp-content/uploads/2019/01/rspec.jpg" height="28" width="60" alt="RSpec"> &nbsp; &nbsp; ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) &nbsp; &nbsp; ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-  <ul>
-    <li><a href="https://rubyonrails.org/">Rails</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://www.tailwindcss.com/">Tailwind CSS</a></li>
-  </ul>
-<!-- Features -->
+- ### Live demo : [here](https://bulgabudget.herokuapp.com/)
+- ### Loom presentation : [live video](https://www.loom.com/share/a35eeb7753404cb2ae8efd38bbe06d20)
 
-### Key Features <a name="key-features"></a>
+## Getting Started
 
-- **Signup**
-- **Login**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### 🚀 Live and Video Demo <a name="live and video-demo"></a>
-
-- [live demo link](visionary-narwhal-5adafc.netlify.app)<br>
-- [ video demo link](https://www.loom.com/share/0175cb699ec040a8bf745978105a47c5)
-
-<!-- GETTING STARTED -->
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-To get a local copy up and running, follow these steps.
+To get a local copy up and running follow these simple example steps:
 
 ### Prerequisites
 
-In order to run this project you need:
-
-- IDE or code editor: **VsCode, atom, sublime**...
-- To have [Ruby](https://www.ruby-lang.org/en/) and [Git](https://git-scm.com/) installed on your system.
-- To have [Node.js](https://nodejs.org/) installed on your system.
-
-After installing Ruby, run the following command to install rails.-
-
-```sh
- gem install rails
-```
+* Ruby 3.1.1 or 2.7.5
+* Rails 7.0.2
+* RSpec-rails 5.0.0
 
 ### Setup
 
-Clone this project on your local machine using the following command in your terminal:
-
-```sh
-  git clone https://github.com/DaveZag/recipe-app.git
-```
+1. In your terminal, `cd` to the directory where you want to copy this project.
+2. Still in your terminal, clone the repository by typing `git clone https://github.com/rolandm99/budget-app.git`
+3. Run cd `budget-app`
 
 ### Install
 
-Run the following command to install all project's dependencies:
+* After completing the setup section, type `bundle install`
 
-```sh
-  cd rails-app
-  bundle install
-  node install
-```
+### Running the app
 
-### Usage
+- Run `rake db:create:all` and `rake db:migrate`
+- Run `rake db:seed` to populate the database with some sample data.
+- Run `rails s` to start the server.
+- In your browser, go to http://localhost:3000.
 
-To run the project, execute the following command:
+### Testing
+- Run `gem install rspec` to install Rspec,
+- Run `rspec spec` to run all the test cases, and
+- Run `rspec spec/name_of_test_file.rb` to run test cases individually.
 
-Example command:
+## Author
 
-```sh
-  rails server
-```
+👤 **Roland Mweze**
 
-OR
+- GitHub: [@RolandM99](https://github.com/RolandM99)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/roland-mweze/)
+- Twitter: [@ManfulMwez](https://twitter.com/ManfulMwez)
 
-```sh
-  rails s
-```
-
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-👤 **Author1**
-
-- GitHub: [omarbabou](https://github.com/omarbabou)
-- LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
-- twitter: [BabouOmar3](https://twitter.com/BabouOmar3)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **Add GUI**
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## ⭐️ Show your support <a name="support"></a>
+## Show your support
 
-If you like this project, kindly give it a star ⭐️
+Give a ⭐️ if you like this project!
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
+## Acknowledgments
 
-- Microverse
-- Ruby on Rails Documentation🙃
-- Every person who inspired this codebase.
+- Heartfelt thanks to Microverse
+- A special thanks to [design guidlines](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+- At last and not least I thanks the designer [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
-## 📝 License <a name="license"></a>
+## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is **MIT** licensed.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
