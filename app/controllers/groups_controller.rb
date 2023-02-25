@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   
   def index
-    @groups = current_user.groups.all.order(created_at: :desc)
+    @group = current_user
   end
 
   def show; end
@@ -18,8 +18,8 @@ class GroupsController < ApplicationController
       # render :show, status: :created, location: @group
       redirect_to groups_path, notice: "Added Succefully!"
     else
-      flash.now[:error] = 'Groups not yet saved, try again'
-      render :new, status: :unprocessable_entity
+        flash.now[:error] = 'Group not yet saved, try again'
+        render :new, status: :unprocessable_entity
     end
   end
 
