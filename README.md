@@ -45,7 +45,8 @@
 
 ### 🚀 Live and Video Demo <a name="live and video-demo"></a>
 
-- [ video demo link](https://www.loom.com/share/0175cb699ec040a8bf745978105a47c5)
+- [live project](https://budget-app-rails.herokuapp.com/)
+- [video demo link](https://www.loom.com/share/0175cb699ec040a8bf745978105a47c5)
 
 <!-- GETTING STARTED -->
 
