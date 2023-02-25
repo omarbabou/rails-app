@@ -1,100 +1,145 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-![](https://img.shields.io/badge/ruby-red)
-![](https://img.shields.io/badge/RoR-pink)
+# 📗 Table of Contents
 
-# Rails Blog App
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-![budget_app](https://user-images.githubusercontent.com/80612925/172840322-309e343e-facd-4015-bec5-156fccc8e96c.PNG)
+<!-- PROJECT DESCRIPTION -->
 
-## Project Description
+# 📖 Game Time <a name="about-project"></a>
 
-a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+> a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-## links
+## 🛠 Built With <a name="built-with"></a>
 
-- Demo link: [budget-app](https://my-bugdet-app.herokuapp.com/users/sign_in)
-- Loom presentation: [Budget app](https://www.loom.com/share/8211974b4cac4fe7bfcc93da6927af62)
+### Tech Stack <a name="tech-stack"></a>
 
-## Built With
+  <ul>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://www.tailwindcss.com/">Tailwind CSS</a></li>
+  </ul>
+<!-- Features -->
 
-- Ruby
-- Ruby on Rails
-- Rubocop
-- FactoryBot
-- Capybara
-- CSS
+### Key Features <a name="key-features"></a>
 
-# Get Started
-Follow these steps below:
+- **Signup**
+- **Login**
+- **Add Category**
+- **Add Transactions**
 
-## Pre-requisites
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```bash
-- Ruby
-- Rails
-- PostgreSQL
+### 🚀 Live and Video Demo <a name="live and video-demo"></a>
+
+- [ video demo link](https://www.loom.com/share/0175cb699ec040a8bf745978105a47c5)
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+- IDE or code editor: **VsCode, atom, sublime**...
+- To have [Ruby](https://www.ruby-lang.org/en/) and [Git](https://git-scm.com/) installed on your system.
+- To have [Node.js](https://nodejs.org/) installed on your system.
+
+After installing Ruby, run the following command to install rails.-
+
+```sh
+ gem install rails
 ```
 
-## Setup
-Clone the repo and run bundle install in the command line to install the dependencies
+### Setup
 
-```bash
-$ git clone https://github.com/Kandy-Peter/budget-app.git
-$ cd bugdet-app
+Clone this project on your local machine using the following command in your terminal:
+
+```sh
+  git clone https://github.com/DaveZag/recipe-app.git
 ```
 
-## Install gems with:
+### Install
 
-```bash
-$ bundle install
+Run the following command to install all project's dependencies:
+
+```sh
+  cd rails-app
+  bundle install
+  node install
 ```
 
-## Install style linters with
-```bash
-$ npm install
+### Usage
+
+To run the project, execute the following command:
+
+Example command:
+
+```sh
+  rails server
 ```
 
-## Run test
-```bash
-$ rspec spec
-$ rspec ./spec/${path}
-```
-## Start rails server (puma)
+OR
 
-```bash
-$ rails server
+```sh
+  rails s
 ```
 
-Open [http://localhost:3000/](http://localhost:3000/) in your browser
+## 👥 Authors <a name="authors"></a>
 
-## Author
+> Mention all of the collaborators of this project.
 
-👤 **Kandi Peter**
+👤 **Author1**
 
-- GitHub: [Kandi-Peter](https://github.com/Kandy-Peter)
-- LinkedIn: [Kandi-Kamuntu](https://www.linkedin.com/in/kandi-peter-a49590212/)
-- twitter: [Kandi_Peter](https://twitter.com/peter_kandy)
+- GitHub: [omarbabou](https://github.com/omarbabou)
+- LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
+- twitter: [BabouOmar3](https://twitter.com/BabouOmar3)
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Add GUI**
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+## ⭐️ Show your support <a name="support"></a>
 
-Give a ⭐️ if you like this project!
+If you like this project, kindly give it a star ⭐️
 
-## Acknowledgments
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- Ruby on Rails Documentation🙃
+- Every person who inspired this codebase.
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella). Thanks also [The Creative Commons license](https://creativecommons.org/licenses/by-nc/4.0/).
 
-## Desing inspiration:
+## 📝 License <a name="license"></a>
 
-Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+This project is [MIT](./LICENSE) licensed.
 
-## 📝 License
-
-See [PUBLIC](./LICENSE) license.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
