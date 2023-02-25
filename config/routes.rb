@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :categories do
-    resources :transactions 
+  resources :categories, only: %i[index new create  destroy ] do
+    resources :transactions, only: %i[index show new create update destroy]
   end
-  
+
   devise_scope :user do
     get 'users/sign_out' => 'devise/sessions#destroy'
   end
